@@ -1,0 +1,8 @@
+# Example service, so a fresh cluster has something to show. Launchbay writes files like this.
+name: hello-launchbay
+owner: team-platform
+template: example
+image: ghcr.io/stefanprodan/podinfo:6.7.1
+port: 9898
+host: hello-launchbay.localtest.me
+runAsUser: 10001
