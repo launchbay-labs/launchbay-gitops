@@ -5,3 +5,4 @@ template: example
 image: ghcr.io/stefanprodan/podinfo:6.7.1
 port: 9898
 host: hello-launchbay.localtest.me
+runAsUser: 10001

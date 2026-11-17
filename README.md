@@ -13,6 +13,7 @@ owner: team-payments
 template: python-fastapi
 image: ghcr.io/launchbay-labs/payments-api@sha256:…
 port: 8000
+runAsUser: 10001
 host: payments-api.localtest.me
 ```
 
