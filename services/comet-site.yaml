@@ -1,0 +1,7 @@
+name: comet-site
+owner: team-platform
+template: static-site
+image: ghcr.io/launchbay-labs/comet-site:1651db3075e1308edb364b6a118ba1e451353764
+port: 8080
+host: comet-site.localtest.me
+runAsUser: 101
