@@ -1,0 +1,14 @@
+# Filled in per service from services/<name>.yaml by the ApplicationSet.
+name: ""
+owner: ""
+template: ""
+image: ""
+port: 8080
+host: ""
+healthPath: /healthz
+ingressClass: traefik
+replicas: 2
+
+resources:
+  requests: { cpu: 25m, memory: 48Mi }
+  limits: { cpu: 250m, memory: 192Mi }
