@@ -1,0 +1,7 @@
+name: pulsar-api
+owner: team-platform
+template: python-fastapi
+image: ghcr.io/launchbay-labs/pulsar-api:02e3826bf03bc05b00ab4a906d1537d49757a9f3
+port: 8000
+host: pulsar-api.localtest.me
+runAsUser: 10001
