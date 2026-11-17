@@ -20,3 +20,11 @@ host: payments-api.localtest.me
 Every service gets the same hardened defaults from the chart: two replicas, a PodDisruptionBudget,
 readiness and liveness probes on `/healthz`, a non-root `RuntimeDefault` seccomp profile, no
 privilege escalation, all capabilities dropped, resource requests and limits, and an Ingress.
+
+## Guardrails
+
+Every namespace launched from here is labeled `launchbay.dev/managed: "true"`, and Kyverno enforces
+Launchbay's policies on it: images only from `ghcr.io/launchbay-labs`, each carrying a keyless cosign
+signature from its own repository's CI on `main`, no `:latest`, non-root pods without privilege
+escalation or host access, and resource requests, a memory limit and health probes. A manifest
+that breaks a rule never reaches a running pod.
