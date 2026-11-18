@@ -1,0 +1,14 @@
+name: quasar-api
+owner: team-platform
+template: python-fastapi
+image: ghcr.io/launchbay-labs/quasar-api:d71d4266b19b7cf799ce4ad7d36c6d3fd42cf08e
+port: 8000
+host: quasar-api.localtest.me
+runAsUser: 10001
+env:
+  AWS_ENDPOINT_URL: http://moto.launchbay-cloud.svc.cluster.local:5000
+  AWS_REGION: us-east-1
+  LAUNCHBAY_BUCKET: quasar-api-123456789012
+  LAUNCHBAY_QUEUE_URL: http://moto.launchbay-cloud.svc.cluster.local:5000/123456789012/quasar-api
+  LAUNCHBAY_TABLE: quasar-api
+awsEmulator: true
