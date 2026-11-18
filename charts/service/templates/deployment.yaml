@@ -29,6 +29,18 @@ spec:
           env:
             - name: PORT
               value: {{ .Values.port | quote }}
+            {{- range $name, $value := .Values.env }}
+            - name: {{ $name }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- if .Values.awsEmulator }}
+            # The local AWS emulator accepts any credentials. On real AWS the pod would get a
+            # role through EKS Pod Identity instead of keys.
+            - name: AWS_ACCESS_KEY_ID
+              value: emulator
+            - name: AWS_SECRET_ACCESS_KEY
+              value: emulator
+            {{- end }}
           readinessProbe:
             httpGet: { path: {{ .Values.healthPath }}, port: http }
             periodSeconds: 5
