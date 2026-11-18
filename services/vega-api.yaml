@@ -1,0 +1,13 @@
+name: vega-api
+owner: team-platform
+template: python-fastapi
+image: ghcr.io/launchbay-labs/vega-api:8cd9cef3b34edb3e116a8a3eb6efcdf7993fe749
+port: 8000
+host: vega-api.localtest.me
+runAsUser: 10001
+env:
+  AWS_ENDPOINT_URL: http://moto.launchbay-cloud.svc.cluster.local:5000
+  AWS_REGION: us-east-1
+  LAUNCHBAY_BUCKET: vega-api-123456789012
+  LAUNCHBAY_QUEUE_URL: http://moto.launchbay-cloud.svc.cluster.local:5000/123456789012/vega-api
+awsEmulator: true
