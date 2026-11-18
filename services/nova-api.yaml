@@ -1,0 +1,13 @@
+name: nova-api
+owner: team-platform
+template: python-fastapi
+image: ghcr.io/launchbay-labs/nova-api:e2420f4295ff35d8aa324407fc285ece13180cd8
+port: 8000
+host: nova-api.localtest.me
+runAsUser: 10001
+env:
+  AWS_ENDPOINT_URL: http://moto.launchbay-cloud.svc.cluster.local:5000
+  AWS_REGION: us-east-1
+  LAUNCHBAY_BUCKET: nova-api-123456789012
+  LAUNCHBAY_QUEUE_URL: http://moto.launchbay-cloud.svc.cluster.local:5000/123456789012/nova-api
+awsEmulator: true
